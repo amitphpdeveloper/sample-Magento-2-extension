@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	 <update handle="customer_account"/>
+	  <head>
+		
+        <css src="Tm_ProductList::css/productlist.css"/>
+        <css src="Tm_ProductList::css/owl.carousel.css"/>
+        <css src="Tm_ProductList::css/owl.theme.css"/>
+        <css src="Tm_ProductList::css/owl.transitions.css"/>
+   
+    </head>
+	<body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Tm ProductList</argument>
+            </action>
+         </referenceBlock>
+			
+         <referenceContainer name="content">
+		   
+            <block class="Tm\ProductList\Block\ProductList" name="index.index" template="Tm_ProductList::index/index.phtml" >
+			  <block class="Tm\ProductList\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Tm_ProductList::product/list/toolbar.phtml">
+                   
+				   <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
+                       
+                    </block>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">product_list_toolbar</argument>
+                    </action>
+			
+			</block>
+        </referenceContainer>
+    </body>
+</page>

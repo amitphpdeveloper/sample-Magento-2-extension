@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<attribute name="class" value="account"/>
+	<body>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Framework\View\Element\Html\Links" name="customer_account_navigation_secondary" after="customer_account_navigation" ifconfig="product_list/general_setting/enable" template="Magento_Customer::account/navigation.phtml">
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-account-link-secondary"> 
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Tm ProductList</argument>
+                        <argument name="path" xsi:type="string">productlist/index/index</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
